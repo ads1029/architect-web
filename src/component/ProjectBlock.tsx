@@ -3,9 +3,9 @@ import Image from "next/image";
 import type { StaticImageData as imageImport } from "next/image";
 
 interface blockProps {
-  image: string | imageImport;
-  title: string;
-  description: string;
+  image?: string | imageImport;
+  title?: string;
+  description?: string;
   link?: string;
 }
 
