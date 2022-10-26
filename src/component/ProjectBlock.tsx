@@ -1,8 +1,10 @@
 import React from "react";
 import Image from "next/image";
 import type { StaticImageData as imageImport } from "next/image";
+import Link from "next/link";
 
 interface blockProps {
+  id?: number;
   image?: string | imageImport;
   title?: string;
   description?: string;
@@ -23,13 +25,13 @@ const ProjectBlock = (props: blockProps) => {
           />
         )}
         <div className="w-80 h-80 bg-black text-inherit opacity-0 hover:opacity-70 duration-500">
-          <a href="https://www.google.com">
+          <Link href={props.id ? `/projects/${props.id}` : `/projects`}>
             <div className="w-full h-full grid place-items-center">
               <p className="z-10 text-white text-xl font-semibold">
                 POPUP TITLE!
               </p>
             </div>
-          </a>
+          </Link>
         </div>
       </div>
     </>
